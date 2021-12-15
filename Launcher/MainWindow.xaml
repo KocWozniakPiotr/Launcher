@@ -1,0 +1,306 @@
+﻿<Window x:Class="Launcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Launcher"
+        mc:Ignorable="d"
+        Title="Launcher" Height="420" Width="420" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
+    <Window.Style>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border x:Name="Border" CornerRadius="15" BorderThickness="1" BorderBrush="#FF151515">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF05000F"/>
+                                    <GradientStop Color="#FF2B0F61" Offset="0.679"/>
+                                    <GradientStop Color="#FF130330" Offset="0.949"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                            <ContentPresenter Margin="2" 
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" 
+                                            RecognizesAccessKey="True"/>
+                        </Border>
+
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Style>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FF2B0F61" Offset="0.679"/>
+            <GradientStop Color="#FF130330" Offset="0.949"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Asyllion Launcher" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="162" FontWeight="Bold" Background="#00000000" Foreground="#BF9A44F3" FontSize="18" Margin="126,0,125.333,0"/>
+        <Label x:Name="versionLabel" Content="version" HorizontalAlignment="Left" Margin="356,392,0,-5.6" VerticalAlignment="Top" Background="{x:Null}" Foreground="#7F9A44F3" Height="28" Width="51" FontSize="10" FontWeight="Bold"/>
+        <Button x:Name="LaunchGameButton" Content=" Start Game" HorizontalAlignment="Center" Margin="87,285,87.333,0" VerticalAlignment="Top" FontWeight="Bold" Height="54" Width="239" BorderBrush="#FF151515" FontSize="24" Click="LaunchGameButton_Click" Foreground="#FF8D4444" BorderThickness="1,1,1,1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEFF25" Offset="0"/>
+                    <GradientStop Color="#FF814E02" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="OverridesDefaultStyle" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+
+                                <Border Name="Border" CornerRadius="8" BorderThickness="1" BorderBrush="#FF151515">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF825002" Offset="0.998"/>
+                                            <GradientStop Color="#FFDEFE25"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsDefaulted" Value="true">
+                                        <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" 
+                          Property="Background" Value="#FFBC9E00" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="ExitButton" Content="×" HorizontalAlignment="Left" Margin="377,7,0,0" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Width="30" Click="ExitButton_Click" Foreground="#7F9442E9" BorderBrush="#FF2A0F5F" FontFamily="Arial Black" Height="30">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF210B4A" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="OverridesDefaultStyle" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+
+                                <Border Name="Border" CornerRadius="8" BorderThickness="1"
+                    BorderBrush="#FF151515">
+
+                                    <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsDefaulted" Value="true">
+                                        <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" 
+                          Property="Background" Value="#FF290F5D" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="StatusBox" HorizontalAlignment="Center" Margin="9,55,15.4,149.4" VerticalAlignment="Center" Width="390" FontSize="14" Height="210" Focusable="False" BorderBrush="#FF431E69" Foreground="#FFA044FF" FontStyle="Normal" Cursor="Arrow" Background="{x:Null}"/>
+        <Label x:Name="GameStatus" Content="connecting..." HorizontalAlignment="Left" Margin="4,26,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="#7F9A44F3"/>
+        <Rectangle HorizontalAlignment="Left" Height="218" Margin="7,52,0,144.4" VerticalAlignment="Center" Width="400" Panel.ZIndex="-7" RadiusX="15" RadiusY="15">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF020007" Offset="0"/>
+                    <GradientStop Color="#FF160437" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Button x:Name="DiscordButton" Content="" HorizontalAlignment="Left" Margin="22,290,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="39" Click="DiscordButton_Click" FontStyle="Normal" FontFamily="Arial Black" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Opacity="0.5" Height="35">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="OverridesDefaultStyle" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+
+                                <Border x:Name="Border" CornerRadius="5" BorderThickness="1"
+                                    BorderBrush="#00202020">
+
+                                    <ContentPresenter Margin="2" 
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsDefaulted" Value="true">
+                                        <Setter TargetName="Border" 
+                                            Property="BorderBrush" Value="#00202020" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" 
+                                            Property="Background" Value="#001A093B" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="40" Margin="22,293,0,0" VerticalAlignment="Top" Width="40" Source="2111370.png" Panel.ZIndex="-7" OpacityMask="Black" Opacity="0.35"/>
+        <Button x:Name="MinimizeButton" Content="_" HorizontalAlignment="Left" Margin="341,8,0,0" VerticalAlignment="Top" FontSize="20" Width="30" Click="MinimizeButton_Click" Foreground="#7F9442E9" BorderBrush="#FF2A0F5F" FontStyle="Normal" FontFamily="Source Serif Pro Black" FontWeight="Bold" Height="30">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF210B4A" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="OverridesDefaultStyle" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+
+                                <Border x:Name="Border" CornerRadius="8" BorderThickness="1"
+                                    BorderBrush="#FF151515" Margin="0,-1,0.4,1.4">
+
+                                    <ContentPresenter Margin="2" 
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsDefaulted" Value="true">
+                                        <Setter TargetName="Border" 
+                                            Property="BorderBrush" Value="#202020" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" 
+                                            Property="Background" Value="#FF290F5D" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Image Margin="98,53,96.4,149.4" Source="finbal_LOGO_mini.png" Stretch="Fill" Opacity="0.03"/>
+        <Button x:Name="ShowUpdateButton" HorizontalAlignment="Center" Margin="357,60,19.333,0" VerticalAlignment="Top" FontWeight="Bold" Height="39" Width="37" FontSize="20" Click="ShowUpdateButton_Click" Foreground="#FF9A44F3" BorderThickness="1,1,1,1" Visibility="Hidden">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="OverridesDefaultStyle" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="8" BorderThickness="1" BorderBrush="#FF0C0C0C" Opacity="1">
+
+                                    <ContentPresenter Margin="2" 
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsDefaulted" Value="true">
+                                        <Setter TargetName="Border" 
+                                            Property="BorderBrush" Value="#202020" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" 
+                                            Property="Background" >
+                                            <Setter.Value>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="#FF2E0C69" Offset="1"/>
+                                                    <GradientStop Color="#FF1F0945" Offset="0.355"/>
+                                                </RadialGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+            <Image Source="upgradeM.png" Stretch="Fill" Opacity=".7" Width="24" Height="22"/>
+        </Button>
+        <Image x:Name="numOne" Margin="387,53,6.333,340.333" Source="number.png" Stretch="Fill" Width="20" Height="20" Visibility="Hidden"/>
+        <CheckBox x:Name="Fullscr" Content="fullscreen" HorizontalAlignment="Left" Margin="22,364,0,0" VerticalAlignment="Top" Width="85" Foreground="#BF9A44F3" FontWeight="Bold" Checked="Fullscr_Checked" Unchecked="Fullscr_Unchecked" IsChecked="False" Background="#FF9B72E8" BorderBrush="#FF2A003C"/>
+        <ComboBox x:Name="ResBox" HorizontalAlignment="Left" Margin="22,385,0,0" VerticalAlignment="Top" Width="85" Height="18" Background="#FF9B72E8" Opacity="0.4" FontSize="10"/>
+        <Button x:Name="UpdaterButton" Content="update" HorizontalAlignment="Center" Margin="314,233,19.333,0" VerticalAlignment="Top" FontWeight="Bold" Width="80" FontSize="18" Click="UpdateButton_Click" Foreground="#BF9A44F3" BorderThickness="1,1,1,1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4200CF" Offset="1"/>
+                    <GradientStop Color="#FFB695FF"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="OverridesDefaultStyle" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="8" BorderThickness="1" BorderBrush="#FF0C0C0C">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF1B0740" Offset="0.998"/>
+                                            <GradientStop Color="#FF2B0F61"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+
+                                    <Trigger Property="IsDefaulted" Value="true">
+                                        <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" 
+                          Property="Background" Value="#FF1D0746" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <CheckBox x:Name="DownloadMode" Content="include Client" HorizontalAlignment="Left" Margin="22,249,0,0" VerticalAlignment="Top" Width="122" Foreground="#BF9A44F3" FontWeight="Bold" Checked="DownloadMode_Checked" Unchecked="DownloadMode_Unchecked" IsChecked="False" Background="#FF9B72E8" BorderBrush="#FF2A003C"/>
+    </Grid>
+</Window>
+
