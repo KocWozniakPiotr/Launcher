@@ -18,8 +18,8 @@ namespace Launcher
     {
         private readonly BackgroundWorker worker = new BackgroundWorker();
         Version ver = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-        Uri urlSys = new Uri("https://www.asyllion.duckdns.org/system.zip");
-        Uri urlGame = new Uri("https://www.asyllion.duckdns.org/Lineage2-H5-Asyllion.zip");
+        Uri urlSys = new Uri("https://www.sample.com/system.zip");
+        Uri urlGame = new Uri("https://www.sample.com/Lineage2-H5.zip");
         bool buttonsActive = true;
         bool upgradeReady = false;
         string currentVersion, latestVersion;
@@ -126,7 +126,7 @@ namespace Launcher
 
         private void DiscordButton_Click(object sender, RoutedEventArgs e)
         {
-            string url = " https://www.discord.gg/rJYsMyKvaB";
+            string url = " https://www.discord.gg/sample";
             ProcessStartInfo discordPage = new ProcessStartInfo
             {
                 FileName = "explorer.exe",
@@ -209,13 +209,13 @@ namespace Launcher
             CleanDirectories();
             WebClient client = new WebClient();
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadGameProgressChangedEventHandler);
-            await client.DownloadFileTaskAsync(urlGame, @"Lineage2-H5-Asyllion.zip");
+            await client.DownloadFileTaskAsync(urlGame, @"Lineage2-H5.zip");
             prevContent = StatusBox.Content.ToString();
             prevDirSize = GetDirectorySize(currentPath);
             extracting = true;
-            await Task.Run(() => ZipFile.ExtractToDirectory(@"Lineage2-H5-Asyllion.zip", currentPath));
+            await Task.Run(() => ZipFile.ExtractToDirectory(@"Lineage2-H5.zip", currentPath));
             StatusBox.Content += "cleaning temp...";
-            await Task.Run(() => File.Delete(@"Lineage2-H5-Asyllion.zip"));
+            await Task.Run(() => File.Delete(@"Lineage2-H5.zip"));
         }
 
         private void CleanDirectories()
@@ -282,7 +282,7 @@ namespace Launcher
             string news = "";
             try
             {
-                status = client.DownloadString("https://www.asyllion.duckdns.org/status.txt");
+                status = client.DownloadString("https://www.sample.com/status.txt");
                 if (status[1].ToString() == "0")
                 {
                     GameStatus.Foreground = new SolidColorBrush(Colors.Red);
@@ -293,7 +293,7 @@ namespace Launcher
                     GameStatus.Foreground = new SolidColorBrush(Colors.LimeGreen);
                     GameStatus.Content = "SERVER - UP";
                 }
-                news = client.DownloadString("https://www.asyllion.duckdns.org/news.txt");
+                news = client.DownloadString("https://www.sample.com/news.txt");
                 StatusBox.Content = news;
             }
             catch
@@ -308,7 +308,7 @@ namespace Launcher
             try
             {
                 currentVersion = ver.ToString().Substring(0, 7);
-                latestVersion = client.DownloadString("https://www.asyllion.duckdns.org/build-latest/version.txt");
+                latestVersion = client.DownloadString("https://www.sample.com/build-latest/version.txt");
                 if (currentVersion != latestVersion.Substring(0, 7))
                 {
                     ShowUpdateButton.Visibility = Visibility.Visible;
@@ -332,7 +332,7 @@ namespace Launcher
         {
             WebClient client = new WebClient();
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadDataCompletedEventHandler);
-            await client.DownloadFileTaskAsync("https://www.asyllion.duckdns.org/build-latest/Launcher.exe", @"Launcher.exe");
+            await client.DownloadFileTaskAsync("https://www.sample.com/build-latest/Launcher.exe", @"Launcher.exe");
         }
 
         private void DownloadDataCompletedEventHandler(object sender, AsyncCompletedEventArgs e)
@@ -420,9 +420,9 @@ namespace Launcher
         {
             if (Directory.Exists(Directory.GetCurrentDirectory() + @"\system"))
             {
-                if (File.Exists(Directory.GetCurrentDirectory() + @"\system\Asyllion.ini") == false)
+                if (File.Exists(Directory.GetCurrentDirectory() + @"\system\YourConfig.ini") == false)
                 {
-                    var sw = new StreamWriter(Directory.GetCurrentDirectory() + @"\system\Asyllion.ini");
+                    var sw = new StreamWriter(Directory.GetCurrentDirectory() + @"\system\YourConfig.ini");
                     sw.Close();
                 }
             }
