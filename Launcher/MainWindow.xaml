@@ -47,7 +47,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Asyllion Launcher" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="162" FontWeight="Bold" Background="#00000000" Foreground="#BF9A44F3" FontSize="18" Margin="126,0,125.333,0"/>
+        <Label Content="Your Launcher" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="162" FontWeight="Bold" Background="#00000000" Foreground="#BF9A44F3" FontSize="18" Margin="126,0,125.333,0"/>
         <Label x:Name="versionLabel" Content="version" HorizontalAlignment="Left" Margin="356,392,0,-5.6" VerticalAlignment="Top" Background="{x:Null}" Foreground="#7F9A44F3" Height="28" Width="51" FontSize="10" FontWeight="Bold"/>
         <Button x:Name="LaunchGameButton" Content=" Start Game" HorizontalAlignment="Center" Margin="87,285,87.333,0" VerticalAlignment="Top" FontWeight="Bold" Height="54" Width="239" BorderBrush="#FF151515" FontSize="24" Click="LaunchGameButton_Click" Foreground="#FF8D4444" BorderThickness="1,1,1,1">
             <Button.Background>
